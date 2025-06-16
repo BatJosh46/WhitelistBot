@@ -97,9 +97,9 @@ client.on('interactionCreate', async (interaction) => {
 
 		// Get the file
 		const file = await octokit.repos.getContent({
-			owner: 'BatJosh46',
-			repo: 'BewitchedVRlists',
-			path: 'BewitchedVR/Whitelist.json'
+			owner: '',
+			repo: '',
+			path: '.json'
 		});
 	
 		// Parse the file content
@@ -124,9 +124,9 @@ client.on('interactionCreate', async (interaction) => {
 
 		// Get the file
 		const file = await octokit.repos.getContent({
-		    owner: 'BatJosh46',
-			repo: 'BewitchedVRlists',
-			path: 'BewitchedVR/Whitelist.json'
+		    owner: '',
+			repo: '',
+			path: '.json'
 		});
 
 		// Parse the file content
