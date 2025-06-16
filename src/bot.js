@@ -97,6 +97,7 @@ client.on('interactionCreate', async (interaction) => {
 
 		// Get the file
 		const file = await octokit.repos.getContent({
+			// Information for the whitelists repository
 			owner: '',
 			repo: '',
 			path: '.json'
@@ -124,6 +125,7 @@ client.on('interactionCreate', async (interaction) => {
 
 		// Get the file
 		const file = await octokit.repos.getContent({
+			// Information for the whitelists repository
 		    owner: '',
 			repo: '',
 			path: '.json'
