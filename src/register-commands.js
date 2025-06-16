@@ -124,7 +124,7 @@ const commands = [
 					{
 						name: 'VIP',
 						description: 'Gives the user VIP privelages in the worlds',
-						value: 'VVIP',
+						value: 'VIP',
 					}
 				]
 			},
