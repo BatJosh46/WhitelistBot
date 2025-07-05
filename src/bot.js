@@ -126,9 +126,9 @@ client.on('interactionCreate', async (interaction) => {
 		// Get the file
 		const file = await octokit.repos.getContent({
 			// Information for the whitelists repository
-		    owner: '',
-			repo: '',
-			path: '.json'
+			owner: process.env.owner,
+			repo: process.env.repo,
+			path: process.env.path
 		});
 
 		// Parse the file content
@@ -165,9 +165,9 @@ client.on('interactionCreate', async (interaction) => {
 async function appendToFile(username, rank, privilege, commitMessage) {
  // Get the file
  const file = await octokit.repos.getContent({
-    owner: 'BatJosh46',
-    repo: 'BewitchedVRlists',
-    path: 'BewitchedVR/Whitelist.json'
+	 owner: process.env.owner,
+	 repo: process.env.repo,
+	 path: process.env.path
  });
 
  const fileContent = JSON.parse(Buffer.from(file.data.content, 'base64').toString('utf8'));
@@ -189,9 +189,9 @@ async function appendToFile(username, rank, privilege, commitMessage) {
 
  // Update the file
  await octokit.repos.createOrUpdateFileContents({
-    owner: 'BatJosh46',
-    repo: 'BewitchedVRlists',
-    path: 'BewitchedVR/Whitelist.json',
+	 owner: process.env.owner,
+	 repo: process.env.repo,
+	 path: process.env.path,
     message: commitMessage,
     content: encodedContent,
     sha: file.data.sha // Provide the SHA of the file
@@ -204,9 +204,9 @@ async function appendToFile(username, rank, privilege, commitMessage) {
 async function removeFromFile(username, commitMessage) {
  // Get the file
  const file = await octokit.repos.getContent({
-    owner: 'BatJosh46',
-    repo: 'BewitchedVRlists',
-    path: 'BewitchedVR/Whitelist.json'
+	 owner: process.env.owner,
+	 repo: process.env.repo,
+	 path: process.env.path
  });
 
  const fileContent = JSON.parse(Buffer.from(file.data.content, 'base64').toString('utf8'));
@@ -224,9 +224,9 @@ async function removeFromFile(username, commitMessage) {
 
  // Update the file
  await octokit.repos.createOrUpdateFileContents({
-    owner: 'BatJosh46',
-    repo: 'BewitchedVRlists',
-    path: 'BewitchedVR/Whitelist.json',
+	 owner: process.env.owner,
+	 repo: process.env.repo,
+	 path: process.env.path,
     message: commitMessage,
     content: encodedContent,
     sha: file.data.sha // Provide the SHA of the file
